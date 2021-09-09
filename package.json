@@ -1,0 +1,29 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/hernanif1/crud.git",
+  "author": "Hernani Fernandes <hernanif1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "yarn frontend:lint && yarn backend:lint && yarn shared:lint",
+    "frontend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./frontend",
+    "backend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./backend",
+    "shared:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./shared",
+    "prepare": "husky install"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared/*"
+  ],
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^6.0.0"
+  }
+}

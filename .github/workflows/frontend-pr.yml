@@ -1,0 +1,45 @@
+name: Frontend pull-request
+
+on:
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'shared/**'
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+      - run: yarn workspace @crud/frontend test
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          working-directory: frontend
+          start: yarn workspace @crud/components build, yarn start
+          wait-on: 'http://localhost:3000'
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: frontend-cypress-videos
+          path: frontend/cypress/videos
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+      - run: yarn frontend:lint
+      - run: yarn workspace @crud/components build
+      - run: yarn workspace @crud/frontend build
