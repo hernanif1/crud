@@ -6,6 +6,7 @@
 ## TODO
 
 - [ ] add integration tests
+- [ ] deploy app backend (maybe heroku?)
 - [ ] Analytics tools
 - [ ] Log tools
 - [ ] BE prisma

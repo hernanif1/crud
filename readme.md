@@ -43,3 +43,9 @@ Run storybooks
 cd shared/components
 yarn start
 ```
+
+## TODO
+
+- [ ] add badges coverage
+- [ ] create images to explain architecture
+- [ ] add semantic release version control
