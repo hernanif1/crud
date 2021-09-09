@@ -9,6 +9,7 @@
 
 ## TODO
 
+- [ ] deploy project (maybe heroku?)
 - [ ] add index in all folders
 - [ ] add cypress
 - [ ] review ci unit tests and e2e tests
