@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "nodemon index.ts",
+    "test": "node",
     "build": "tsc --project ./"
   },
   "eslintConfig": {
