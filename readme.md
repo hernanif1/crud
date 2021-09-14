@@ -10,9 +10,9 @@ If the frontend needs to split into multi-apps the next step would be put the fr
 
 To see more about design choices check the README of each project
 
-- ./backend/README.md
-- ./frontend/README.md
-- ./shared/README.md
+- [./backend/README.md](https://github.com/hernanif1/crud/tree/master/backend)
+- [./frontend/README.md](https://github.com/hernanif1/crud/tree/master/frontend)
+- [./shared/README.md](https://github.com/hernanif1/crud/tree/master/shared)
 
 Install all projects
 
