@@ -1,4 +1,4 @@
-const AccountHandler = (app: any) => {
+const accounts = (app: any) => {
   let currentId = 1
   const mockDatabase = [
     {
@@ -89,4 +89,4 @@ const AccountHandler = (app: any) => {
   })
 }
 
-export { AccountHandler }
+export { accounts }

@@ -1,5 +1,5 @@
 import express, { json, urlencoded } from 'express'
-import { AccountHandler } from './AccountHandler'
+import { accounts } from './api/accounts'
 import logger from 'morgan'
 
 const app = express()
@@ -12,11 +12,10 @@ app.use((_req: any, res: any, next: any) => {
   next()
 })
 
-AccountHandler(app)
+accounts(app)
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.error(`App listening at http://localhost:${port}`)
+  console.log(`App listening at http://localhost:${port}`)
 })
 
 export default app
