@@ -1,11 +1,14 @@
 {
   "name": "@crud/backend",
   "version": "0.1.0",
-  "main": "./src/index.js",
+  "main": "./build/index.js",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "scripts": {
     "start": "nodemon index.ts",
