@@ -3,7 +3,7 @@ import { AccountHandler } from './AccountHandler'
 import logger from 'morgan'
 
 const app = express()
-const port = 4000
+const port = 8080
 app.use(json())
 app.use(urlencoded({ extended: false }))
 app.use(logger('dev'))
