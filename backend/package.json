@@ -12,7 +12,8 @@
   },
   "scripts": {
     "dev": "nodemon index.ts",
-    "test": "node"
+    "test": "node",
+    "build": "tsc --project ./"
   },
   "eslintConfig": {
     "extends": "../.eslintrc.json"
