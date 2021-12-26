@@ -1,4 +1,6 @@
-const accounts = (app: any) => {
+import { Express, Request, Response } from 'express'
+
+const accounts = (app: Express) => {
   let currentId = 1
   const mockDatabase = [
     {
@@ -33,11 +35,11 @@ const accounts = (app: any) => {
     }
   ]
 
-  app.get('/accounts', (req: any, res: any) => {
+  app.get('/accounts', (req: Request, res: Response) => {
     res.json(mockDatabase)
   })
 
-  app.post('/accounts', (req: any, res: any) => {
+  app.post('/accounts', (req: Request, res: Response) => {
     const id = '' + currentId++
     mockDatabase.push({
       name: req.body.name,
@@ -48,7 +50,7 @@ const accounts = (app: any) => {
     res.json({ success: true, id })
   })
 
-  app.get('/accounts/:id', (req: any, res: any) => {
+  app.get('/accounts/:id', (req: Request, res: Response) => {
     const account = mockDatabase.find(account => account.id === req.params.id)
     if (account) {
       res.json(account)
@@ -57,7 +59,7 @@ const accounts = (app: any) => {
     res.json({ error: true, message: 'account.not.found' })
   })
 
-  app.delete('/accounts/:id', (req: any, res: any) => {
+  app.delete('/accounts/:id', (req: Request, res: Response) => {
     let removed = null
     for (let i = 0; i < mockDatabase.length; i++) {
       const account = mockDatabase[i]
@@ -70,7 +72,7 @@ const accounts = (app: any) => {
     res.json({ success, removed })
   })
 
-  app.put('/accounts/:id', (req: any, res: any) => {
+  app.put('/accounts/:id', (req: Request, res: Response) => {
     let toUpdate = null
     for (let i = 0; i < mockDatabase.length; i++) {
       const account = mockDatabase[i]
