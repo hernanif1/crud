@@ -13,7 +13,6 @@ app.use(cors())
 accounts(app)
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.info(`App listening at http://localhost:${port}`)
 })
 

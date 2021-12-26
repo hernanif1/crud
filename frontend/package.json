@@ -8,6 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "CI=true react-scripts test",
+    "e2e": "yarn cypress run",
+    "e2e:dev": "yarn cypress open",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -51,6 +53,8 @@
   "devDependencies": {
     "@testing-library/react-hooks": "^7.0.2",
     "@types/react-router-dom": "^5.1.8",
-    "cypress": "^7.4.0"
+    "cypress": "^9.2.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
