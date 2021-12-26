@@ -8,8 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "CI=true react-scripts test",
-    "e2e": "yarn cypress run",
-    "e2e:dev": "yarn cypress open",
+    "e2e": "CYPRESS_API_URL=http://localhost:4000 yarn cypress run",
+    "e2e:dev": "CYPRESS_API_URL=http://localhost:4000 yarn cypress open",
     "eject": "react-scripts eject"
   },
   "dependencies": {
