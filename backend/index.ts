@@ -1,4 +1,10 @@
-import express, { json, urlencoded } from 'express'
+import express, {
+  json,
+  NextFunction,
+  Request,
+  Response,
+  urlencoded
+} from 'express'
 import { accounts } from './api/accounts'
 import logger from 'morgan'
 
@@ -7,7 +13,7 @@ const port = process.env.PORT || 8080
 app.use(json())
 app.use(urlencoded({ extended: false }))
 app.use(logger('dev'))
-app.use((_req: any, res: any, next: any) => {
+app.use((_req: Request, res: Response, next: NextFunction) => {
   res.header('Access-Control-Allow-Origin', '*')
   next()
 })
@@ -15,7 +21,8 @@ app.use((_req: any, res: any, next: any) => {
 accounts(app)
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
+  // eslint-disable-next-line no-console
+  console.info(`App listening at http://localhost:${port}`)
 })
 
 export default app
