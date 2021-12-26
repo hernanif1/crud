@@ -1,11 +1,13 @@
-import axios from 'axios'
+import { axios } from '../utils'
 import UserServices from './Users.services'
 
-jest.mock('axios', () => ({
-  get: jest.fn(),
-  post: jest.fn(),
-  put: jest.fn(),
-  delete: jest.fn()
+jest.mock('../utils', () => ({
+  axios: {
+    get: jest.fn(),
+    post: jest.fn(),
+    put: jest.fn(),
+    delete: jest.fn()
+  }
 }))
 
 const axiosMock = {

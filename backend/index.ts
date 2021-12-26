@@ -1,22 +1,14 @@
-import express, {
-  json,
-  NextFunction,
-  Request,
-  Response,
-  urlencoded
-} from 'express'
-import { accounts } from './api/accounts'
+import express, { json, urlencoded } from 'express'
+import cors from 'cors'
 import logger from 'morgan'
+import { accounts } from './api/accounts'
 
 const app = express()
 const port = process.env.PORT || 4000
 app.use(json())
 app.use(urlencoded({ extended: false }))
 app.use(logger('dev'))
-app.use((_req: Request, res: Response, next: NextFunction) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  next()
-})
+app.use(cors())
 
 accounts(app)
 
