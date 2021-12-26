@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "main": "./src/index.ts",
   "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@crud/components": "*",
     "@crud/helpers": "*",
@@ -25,14 +32,6 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
     "yup": "^0.32.9"
-  },
-  "proxy": "http://localhost:4000",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:ci": "CI=true react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "../.eslintrc.json"
