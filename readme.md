@@ -44,7 +44,7 @@ cd shared/components
 yarn start
 ```
 
-Run prisma pscale connection
+Connect prisma with planetscale (your user needs to be add into [plane scale](https://app.planetscale.com/hernanif1/crud/settings/administrators))
 
 ```sh
 pscale connect tutorial-db initial-setup --port 3309
