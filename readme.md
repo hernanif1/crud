@@ -44,6 +44,13 @@ cd shared/components
 yarn start
 ```
 
+Run prisma pscale connection
+
+```sh
+pscale connect tutorial-db initial-setup --port 3309
+pscale connect tutorial-db shadow --port 3310
+```
+
 ## TODO
 
 - [ ] add badges coverage
