@@ -37,7 +37,8 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-console": ["warn", { "allow": ["error", "info"] }]
+    "no-console": ["warn", { "allow": ["error", "info"] }],
+    "space-before-function-paren": "off"
   },
   "settings": {
     "import/resolver": {

@@ -1,0 +1,21 @@
+{
+  "name": "@crud/prisma",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "scripts": {
+    "db-up": "docker-compose up -d",
+    "prisma:migrate": "yarn prisma migrate dev",
+    "prisma:seed": "prisma db seed",
+    "prisma:studio": "yarn prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "seed": "yarn ts-node prisma/seed.ts"
+  },
+  "devDependencies": {
+    "prisma": "^3.7.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.7.0"
+  }
+}
