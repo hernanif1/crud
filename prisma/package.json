@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "./index.ts",
   "scripts": {
+    "dev": "yarn db-up && yarn prisma:migrate && yarn prisma:seed",
     "db-up": "docker-compose up -d",
     "prisma:migrate": "yarn prisma migrate dev",
     "prisma:seed": "prisma db seed",
@@ -10,7 +11,7 @@
     "postinstall": "prisma generate"
   },
   "prisma": {
-    "seed": "yarn ts-node prisma/seed.ts"
+    "seed": "yarn ts-node ./seed.ts"
   },
   "devDependencies": {
     "prisma": "^3.7.0"

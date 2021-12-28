@@ -4,9 +4,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'alter'
-      MYSQL_USER: user
-      MYSQL_PASS: pass
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: crud
     ports:
       - '3307:3306'

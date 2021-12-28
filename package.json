@@ -7,6 +7,10 @@
   "author": "Hernani Fernandes <hernanif1@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "yarn prisma && concurrently 'yarn backend' 'yarn frontend'",
+    "prisma": "yarn workspace @crud/prisma dev",
+    "backend": "yarn workspace @crud/backend dev",
+    "frontend": "yarn workspace @crud/frontend start",
     "lint": "yarn frontend:lint && yarn backend:lint && yarn shared:lint",
     "frontend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./frontend",
     "backend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./backend",
@@ -26,5 +30,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
     "husky": "^6.0.0"
+  },
+  "dependencies": {
+    "concurrently": "^6.5.1"
   }
 }
